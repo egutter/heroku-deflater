@@ -33,6 +33,8 @@ module Rack
         headers["Vary"] = vary.push("Accept-Encoding").join(",")
       end
 
+      headers['Cache-Control'] = 'public, max-age=18000'
+
       case encoding
       when "gzip"
         headers['Content-Encoding'] = "gzip"
